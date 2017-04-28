@@ -16,13 +16,19 @@ describe('renderer.js', () => {
     headline: 'Weltweit den Tätern auf der Spur',
   };
 
-  it('should get only the title in the simplest usage', () => {
+  it('should get the title', () => {
     const actual = renderer({ asset }, ['title']);
     const expected = 'Criminal Minds: Beyond Borders';
     assert.equal(actual, expected);
   });
 
-  it('should get more info from the different models in the advanced usage', () => {
+  it('should get the tip of the day with the typed title', () => {
+    const actual = renderer({ asset }, ['tipOfTheDay', 'typedTitle'])
+    const expected = 'Tipp des Tages: Die Serie Criminal Minds: Beyond Borders';
+    assert.equal(actual, expected);
+  });
+
+  it('should get more info from the different models', () => {
     const actual = renderer({ asset, maxpert, review }, ['tipOfTheDay', 'maxpert', 'typedTitle', 'review']);
     const expected = 'Tipp des Tages von Felix Böhme: Die Serie Criminal Minds: Beyond Borders, Weltweit den Tätern auf der Spur';
     assert.equal(actual, expected);
