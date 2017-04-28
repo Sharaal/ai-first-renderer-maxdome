@@ -11,7 +11,7 @@
 
 ## Simplest usage, only the asset title
 
-```
+```javascript
 const renderer = require('ai-renderer-maxdome');
 
 renderer({ asset }, ['title']);
@@ -21,7 +21,7 @@ renderer({ asset }, ['title']);
 
 ## Advanced usage, tip of the day with maxpert, typed title, genres and review
 
-```
+```javascript
 const renderer = require('ai-renderer-maxdome');
 
 const string = renderer({ asset, maxpert, review }, ['tipOfTheDay', 'maxpert', 'typedTitle', 'genres', 'review']);
