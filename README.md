@@ -24,6 +24,16 @@ const string = renderer({ asset }, ['title']);
 ```javascript
 const renderer = require('ai-renderer-maxdome');
 
-const string = renderer({ asset, maxpert, review }, ['tipOfTheDay', 'maxpert', 'typedTitle', 'genres', 'review']);
+const string = renderer({ asset }, ['tipOfTheDay', 'typedTitle']);
+// "Tipp des Tages: Die Serie Criminal Minds: Beyond Borders"
+```
+
+
+## Advanced usage, tip of the day with maxpert, typed title, genres and review
+
+```javascript
+const renderer = require('ai-renderer-maxdome');
+
+const string = renderer({ asset, maxpert, review }, ['tipOfTheDay', 'maxpert', 'typedTitle', 'review']);
 // "Tipp des Tages von Felix Böhme: Die Serie Criminal Minds: Beyond Borders, Weltweit den Tätern auf der Spur"
 ```

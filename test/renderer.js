@@ -23,7 +23,7 @@ describe('renderer.js', () => {
   });
 
   it('should get the tip of the day with the typed title', () => {
-    const actual = renderer({ asset }, ['tipOfTheDay', 'typedTitle'])
+    const actual = renderer({ asset }, ['tipOfTheDay', 'typedTitle']);
     const expected = 'Tipp des Tages: Die Serie Criminal Minds: Beyond Borders';
     assert.equal(actual, expected);
   });
