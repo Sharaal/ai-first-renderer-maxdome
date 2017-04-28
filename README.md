@@ -14,7 +14,7 @@
 ```javascript
 const renderer = require('ai-renderer-maxdome');
 
-renderer({ asset }, ['title']);
+const string = renderer({ asset }, ['title']);
 // "Criminal Minds: Beyond Borders"
 ```
 
