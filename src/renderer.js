@@ -1,4 +1,14 @@
-module.exports = ({ asset, maxpert, review }, parts) => {
+module.exports = (data, parts) => {
+  let asset, maxpert;
+  const review = data.review;
+  if (review) {
+    asset = review.asset || data.asset;
+    maxpert = review.maxpert || data.maxpert;
+  } else {
+    asset = data.asset;
+    maxpert = data.maxpert;
+  }
+
   let string;
 
   if (parts.includes('title') || parts.includes('typedTitle')) {

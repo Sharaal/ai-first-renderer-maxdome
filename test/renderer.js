@@ -33,4 +33,21 @@ describe('renderer.js', () => {
     const expected = 'Tipp des Tages von Felix Böhme: Die Serie Criminal Minds: Beyond Borders, Weltweit den Tätern auf der Spur';
     assert.equal(actual, expected);
   });
+
+  it('should also accept the maxdome data structure with asset and maxpert as attribute of review', () => {
+    const review = {
+      asset: {
+        title: 'Criminal Minds: Beyond Borders',
+        type: 'series',
+      },
+      headline: 'Weltweit den Tätern auf der Spur',
+      maxpert: {
+        firstname: 'Felix',
+        surname: 'Böhme',
+      },
+    };
+    const actual = renderer({ review }, ['tipOfTheDay', 'maxpert', 'typedTitle', 'review']);
+    const expected = 'Tipp des Tages von Felix Böhme: Die Serie Criminal Minds: Beyond Borders, Weltweit den Tätern auf der Spur';
+    assert.equal(actual, expected);
+  });
 });
