@@ -7,6 +7,38 @@
 `npm i --save ai-renderer-maxdome`
 
 
+# Examples
+
+## Simplest usage, only the asset title
+
+```javascript
+const renderer = require('ai-renderer-maxdome');
+
+const string = renderer({ asset }, ['title']);
+// "Criminal Minds: Beyond Borders"
+```
+
+
+## Advanced usage, tip of the day with maxpert, typed title, genres and review
+
+```javascript
+const renderer = require('ai-renderer-maxdome');
+
+const string = renderer({ asset }, ['tipOfTheDay', 'typedTitle']);
+// "Tipp des Tages: Die Serie Criminal Minds: Beyond Borders"
+```
+
+
+## Advanced usage, tip of the day with maxpert, typed title, genres and review
+
+```javascript
+const renderer = require('ai-renderer-maxdome');
+
+const string = renderer({ asset, maxpert, review }, ['tipOfTheDay', 'maxpert', 'typedTitle', 'review']);
+// "Tipp des Tages von Felix Böhme: Die Serie Criminal Minds: Beyond Borders, Weltweit den Tätern auf der Spur"
+```
+
+
 # Documentation
 
 `renderer(data, parts)`
@@ -47,35 +79,3 @@ Array with the enabled parts for the output. The order in the array doesn't infl
 * `tipOfTheDay`: Prefix for the tip of the day, e.g. "Tipp des Tages: " or if maxpert is enabled "Tipp des Tages von ${maxpert}"
 * `maxpert`: Firstname and surname of the maxpert (only available with tipOfTheDay together), e.g. "Felix Böhme"
 * `review`: The headline of the review, e.g. ", Weltweit den Tätern auf der Spur"
-
-
-# Examples
-
-## Simplest usage, only the asset title
-
-```javascript
-const renderer = require('ai-renderer-maxdome');
-
-const string = renderer({ asset }, ['title']);
-// "Criminal Minds: Beyond Borders"
-```
-
-
-## Advanced usage, tip of the day with maxpert, typed title, genres and review
-
-```javascript
-const renderer = require('ai-renderer-maxdome');
-
-const string = renderer({ asset }, ['tipOfTheDay', 'typedTitle']);
-// "Tipp des Tages: Die Serie Criminal Minds: Beyond Borders"
-```
-
-
-## Advanced usage, tip of the day with maxpert, typed title, genres and review
-
-```javascript
-const renderer = require('ai-renderer-maxdome');
-
-const string = renderer({ asset, maxpert, review }, ['tipOfTheDay', 'maxpert', 'typedTitle', 'review']);
-// "Tipp des Tages von Felix Böhme: Die Serie Criminal Minds: Beyond Borders, Weltweit den Tätern auf der Spur"
-```
