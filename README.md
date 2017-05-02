@@ -2,6 +2,7 @@
 [![Dependency Status](https://david-dm.org/dragonprojects/ai-renderer-maxdome/status.svg)](https://david-dm.org/dragonprojects/ai-renderer-maxdome)
 [![devDependency Status](https://david-dm.org/dragonprojects/ai-renderer-maxdome/dev-status.svg)](https://david-dm.org/dragonprojects/ai-renderer-maxdome?type=dev)
 
+
 # Installation
 
 `npm i --save ai-renderer-maxdome`
@@ -18,7 +19,6 @@ const string = renderer({ asset }, ['title']);
 // "Criminal Minds: Beyond Borders"
 ```
 
-
 ## Advanced usage, tip of the day with maxpert, typed title, genres and review
 
 ```javascript
@@ -27,7 +27,6 @@ const renderer = require('ai-renderer-maxdome');
 const string = renderer({ asset }, ['tipOfTheDay', 'typedTitle']);
 // "Tipp des Tages: Die Serie Criminal Minds: Beyond Borders"
 ```
-
 
 ## Advanced usage, tip of the day with maxpert, typed title, genres and review
 
