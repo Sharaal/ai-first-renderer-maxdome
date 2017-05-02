@@ -1,5 +1,6 @@
 module.exports = (data, parts) => {
-  let asset, maxpert;
+  let asset;
+  let maxpert;
   const review = data.review;
   if (review) {
     asset = review.asset || data.asset;
