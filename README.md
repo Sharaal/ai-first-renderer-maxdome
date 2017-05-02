@@ -41,12 +41,12 @@ const data = {
 
 Array with the enabled parts for the output. The order in the array doesn't influence the output.
 
-* title: Title, e.g. "Criminal Minds: Beyond Borders"
-* typedTitle: Title prefixed with the type, e.g. "Die Serie Criminal Minds: Beyond Borders"
-* genres: Comma separated genres, e.g. ", Genres: Drama, Thriller"
-* tipOfTheDay: Prefix for the tip of the day, e.g. "Tipp des Tages: " or if maxpert is enabled "Tipp des Tages von ${maxpert}"
-* maxpert: Firstname and surname of the maxpert (only available with tipOfTheDay together), e.g. "Felix Böhme"
-* review: The headline of the review, e.g. ", Weltweit den Tätern auf der Spur"
+* `title`: Title, e.g. "Criminal Minds: Beyond Borders"
+* `typedTitle`: Title prefixed with the type, e.g. "Die Serie Criminal Minds: Beyond Borders"
+* `genres`: Comma separated genres, e.g. ", Genres: Drama, Thriller"
+* `tipOfTheDay`: Prefix for the tip of the day, e.g. "Tipp des Tages: " or if maxpert is enabled "Tipp des Tages von ${maxpert}"
+* `maxpert`: Firstname and surname of the maxpert (only available with tipOfTheDay together), e.g. "Felix Böhme"
+* `review`: The headline of the review, e.g. ", Weltweit den Tätern auf der Spur"
 
 
 # Examples
