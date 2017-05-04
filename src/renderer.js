@@ -69,7 +69,7 @@ module.exports = (data, parts, language = 'de') => {
   if (parts.includes('genres') && asset.genres) {
     string = i18n.__(
       { phrase: '{{string}}, Genres: {{asset.genres}}', locale: language },
-      { 'asset.genres': asset.genres.join(', '), string }
+      { asset: { genres: asset.genres.join(', ') }, string }
     );
   }
 
