@@ -17,7 +17,7 @@ module.exports = (data, parts, language = 'de') => {
     maxpert = data.maxpert;
   }
 
-  let string;
+  let string = '';
 
   if (parts.includes('title') || parts.includes('typedTitle')) {
     string = asset.title;

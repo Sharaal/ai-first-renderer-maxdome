@@ -7,6 +7,7 @@ describe('renderer.js', () => {
   const asset = {
     title: 'Criminal Minds: Beyond Borders',
     type: 'series',
+    description: 'A good description',
   };
   const maxpert = {
     firstname: 'Felix',
@@ -19,6 +20,12 @@ describe('renderer.js', () => {
   it('should get the title', () => {
     const actual = renderer({ asset }, ['title']);
     const expected = 'Criminal Minds: Beyond Borders';
+    assert.equal(actual, expected);
+  });
+
+  it('should get the description', () => {
+    const actual = renderer({ asset }, ['description']);
+    const expected = 'A good description';
     assert.equal(actual, expected);
   });
 
