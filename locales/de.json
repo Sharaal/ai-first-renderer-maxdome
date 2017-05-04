@@ -1,0 +1,11 @@
+{
+  "{{string}}, {{review.headline}}": "{{string}}, {{review.headline}}",
+  "{{string}}, Genres: {{asset.genres}}": "{{string}}, Genres: {{asset.genres}}",
+  "{{string}}. {{asset.description}}": "{{string}}. {{asset.description}}",
+  "{{string}} - Episode {{asset.episodeTitle}}": "{{string}} - Folge {{asset.episodeTitle}}",
+  "{{string}} - Season {{asset.seasonNumber}}": "{{string}} - Staffel {{asset.seasonNumber}}",
+  "The movie {{string}}": "Der Filme {{string}}",
+  "The series {{string}}": "Die Serie {{string}}",
+  "Tip of the Day: {{string}}": "Tipp des Tages: {{string}}",
+  "Tip of the Day from {{maxpert.firstname}} {{maxpert.surname}}: {{string}}": "Tipp des Tages von {{maxpert.firstname}} {{maxpert.surname}}: {{string}}"
+}

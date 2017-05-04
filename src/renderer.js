@@ -1,4 +1,11 @@
-module.exports = (data, parts) => {
+const i18n = require('i18n');
+i18n.configure({
+  directory: `${__dirname}/../locales`,
+  updateFiles: false,
+  locales: ['en', 'de'],
+});
+
+module.exports = (data, parts, language = 'de') => {
   let asset;
   let maxpert;
   const review = data.review;
@@ -19,22 +26,40 @@ module.exports = (data, parts) => {
   if (parts.includes('typedTitle')) {
     switch (asset.type) {
       case 'episode':
-        string = `Die Serie ${string}`;
+        string = i18n.__(
+          { phrase: 'The series {{string}}', locale: language },
+          { string }
+        );
         if (asset.episodeTitle) {
-          string = `${string} - Folge ${asset.episodeTitle}`;
+          string = i18n.__(
+            { phrase: '{{string}} - Episode {{episodeTitle}}', locale: language },
+            { asset, string }
+          );
         }
         break;
       case 'movie':
-        string = `Der Film ${string}`;
+        string = i18n.__(
+          { phrase: 'The movie {{string}}', locale: language },
+          { string }
+        );
         break;
       case 'season':
-        string = `Die Serie ${string}`;
+        string = i18n.__(
+          { phrase: 'The series {{string}}', locale: language },
+          { string }
+        );
         if (asset.seasonNumber) {
-          string = `${string} - Staffel ${asset.seasonNumber}`;
+          string = i18n.__(
+            { phrase: '{{string}} - Season {{asset.seasonNumber}}', locale: language },
+            { asset, string }
+          );
         }
         break;
       case 'series':
-        string = `Die Serie ${string}`;
+        string = i18n.__(
+          { phrase: 'The series {{string}}', locale: language },
+          { string }
+        );
         break;
       default:
         break;
@@ -42,26 +67,42 @@ module.exports = (data, parts) => {
   }
 
   if (parts.includes('genres') && asset.genres) {
-    string = `${string}, Genres: ${asset.genres.join(', ')}`;
+    string = i18n.__(
+      { phrase: '{{string}}, Genres: {{asset.genres}}', locale: language },
+      { 'asset.genres': asset.genres.join(', '), string }
+    );
   }
 
   if (parts.includes('tipOfTheDay')) {
     if (parts.includes('maxpert') && maxpert) {
-      string = `Tipp des Tages von ${maxpert.firstname} ${maxpert.surname}: ${string}`;
+      string = i18n.__(
+        { phrase: 'Tip of the Day from {{maxpert.firstname}} {{maxpert.surname}}: {{string}}', locale: language },
+        { maxpert, string }
+      );
     } else {
-      string = `Tipp des Tages: ${string}`;
+      string = i18n.__(
+        { phrase: 'Tip of the Day: {{string}}', locale: language },
+        { string }
+      );
     }
   }
 
   if (parts.includes('review') && review) {
-    string = `${string}, ${review.headline}`;
+    string = i18n.__(
+      { phrase: '{{string}}, {{review.headline}}', locale: language },
+      { review, string }
+    );
   }
 
   if (parts.includes('description')) {
     if (string.length > 0) {
-      string = `${string}, `;
+      string = i18n.__(
+        { phrase: '{{string}}. {{asset.description}}', locale: language },
+        { asset, string }
+      );
+    } else {
+      string = asset.description;
     }
-    string = `${string}${asset.description}`;
   }
 
   return string;
