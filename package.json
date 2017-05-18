@@ -16,15 +16,14 @@
   "readmeFilename": "README.md",
   "main": "src/lib.js",
   "scripts": {
-    "lint": "eslint src test",
+    "fmt": "dprettier",
     "test": "mocha"
   },
   "dependencies": {
     "i18n": "^0.8.3"
   },
   "devDependencies": {
-    "eslint": "^3.15.0",
-    "eslint-config-dnode": "^1.11.0",
+    "dprettier": "^1.1.0",
     "mocha": "^3.2.0"
   }
 }

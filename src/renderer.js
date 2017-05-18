@@ -32,7 +32,10 @@ module.exports = (data, parts, language = 'de') => {
         );
         if (asset.episodeTitle) {
           string = i18n.__(
-            { phrase: '{{string}} - Episode {{episodeTitle}}', locale: language },
+            {
+              phrase: '{{string}} - Episode {{episodeTitle}}',
+              locale: language,
+            },
             { asset, string }
           );
         }
@@ -50,7 +53,10 @@ module.exports = (data, parts, language = 'de') => {
         );
         if (asset.seasonNumber) {
           string = i18n.__(
-            { phrase: '{{string}} - Season {{asset.seasonNumber}}', locale: language },
+            {
+              phrase: '{{string}} - Season {{asset.seasonNumber}}',
+              locale: language,
+            },
             { asset, string }
           );
         }
@@ -76,7 +82,10 @@ module.exports = (data, parts, language = 'de') => {
   if (parts.includes('tipOfTheDay')) {
     if (parts.includes('maxpert') && maxpert) {
       string = i18n.__(
-        { phrase: 'Tip of the Day from {{maxpert.firstname}} {{maxpert.surname}}: {{string}}', locale: language },
+        {
+          phrase: 'Tip of the Day from {{maxpert.firstname}} {{maxpert.surname}}: {{string}}',
+          locale: language,
+        },
         { maxpert, string }
       );
     } else {
