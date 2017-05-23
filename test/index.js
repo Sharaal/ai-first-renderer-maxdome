@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 
 const assert = require('assert');
-const renderer = require('../src/renderer');
+const renderer = require('../index');
 
 describe('renderer.js', () => {
   const asset = {

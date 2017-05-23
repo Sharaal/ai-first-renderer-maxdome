@@ -1,14 +1,4 @@
-[![Build Status](https://travis-ci.org/dragonprojects/ai-renderer-maxdome.svg?branch=master)](https://travis-ci.org/dragonprojects/ai-renderer-maxdome)
-[![Dependency Status](https://david-dm.org/dragonprojects/ai-renderer-maxdome/status.svg)](https://david-dm.org/dragonprojects/ai-renderer-maxdome)
-[![devDependency Status](https://david-dm.org/dragonprojects/ai-renderer-maxdome/dev-status.svg)](https://david-dm.org/dragonprojects/ai-renderer-maxdome?type=dev)
-
-
-# Installation
-
-`npm i --save ai-renderer-maxdome`
-
-
-# Examples
+# Usage
 
 ## Simplest usage, only the asset title
 
@@ -36,7 +26,6 @@ const renderer = require('ai-renderer-maxdome');
 const string = renderer({ asset, maxpert, review }, ['tipOfTheDay', 'maxpert', 'typedTitle', 'review']);
 // "Tipp des Tages von Felix Böhme: Die Serie Criminal Minds: Beyond Borders, Weltweit den Tätern auf der Spur"
 ```
-
 
 # Documentation
 
@@ -72,6 +61,7 @@ const data = {
 
 Array with the enabled parts for the output. The order in the array doesn't influence the output.
 
+* `description`: Description of the asset, if combined with other parts, it will be added at the end
 * `title`: Title, e.g. "Criminal Minds: Beyond Borders"
 * `typedTitle`: Title prefixed with the type, e.g. "Die Serie Criminal Minds: Beyond Borders"
 * `genres`: Comma separated genres, e.g. ", Genres: Drama, Thriller"
