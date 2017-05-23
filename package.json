@@ -2,10 +2,10 @@
   "engines": {
     "node": "^7.6.0"
   },
-  "name": "ai-renderer-maxdome",
+  "name": "@ai-first/renderer-maxdome",
   "version": "1.2.4",
   "description": "",
-  "repository": "sharaal/ai-renderer-maxdome",
+  "repository": "sharaal/ai-first-renderer-maxdome",
   "license": "UNLICENSED",
   "publishConfig": {
     "access": "public"
