@@ -3,7 +3,7 @@
     "node": "^7.6.0"
   },
   "name": "@ai-first/renderer-maxdome",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Generate localized texts with configurable parts for maxdome assets, maxperts and reviews",
   "repository": "sharaal/ai-first-renderer-maxdome",
   "license": "UNLICENSED",

@@ -27,13 +27,13 @@ module.exports = (data, parts, language = 'de') => {
     switch (asset.type) {
       case 'episode':
         string = i18n.__(
-          { phrase: 'The series {{string}}', locale: language },
+          { phrase: 'The series {{& string}}', locale: language },
           { string }
         );
         if (asset.episodeTitle) {
           string = i18n.__(
             {
-              phrase: '{{string}} - Episode {{episodeTitle}}',
+              phrase: '{{& string}} - Episode {{& episodeTitle}}',
               locale: language,
             },
             { asset, string }
@@ -42,19 +42,19 @@ module.exports = (data, parts, language = 'de') => {
         break;
       case 'movie':
         string = i18n.__(
-          { phrase: 'The movie {{string}}', locale: language },
+          { phrase: 'The movie {{& string}}', locale: language },
           { string }
         );
         break;
       case 'season':
         string = i18n.__(
-          { phrase: 'The series {{string}}', locale: language },
+          { phrase: 'The series {{& string}}', locale: language },
           { string }
         );
         if (asset.seasonNumber) {
           string = i18n.__(
             {
-              phrase: '{{string}} - Season {{asset.seasonNumber}}',
+              phrase: '{{& string}} - Season {{& asset.seasonNumber}}',
               locale: language,
             },
             { asset, string }
@@ -63,7 +63,7 @@ module.exports = (data, parts, language = 'de') => {
         break;
       case 'series':
         string = i18n.__(
-          { phrase: 'The series {{string}}', locale: language },
+          { phrase: 'The series {{& string}}', locale: language },
           { string }
         );
         break;
@@ -74,7 +74,7 @@ module.exports = (data, parts, language = 'de') => {
 
   if (parts.includes('genres') && asset.genres) {
     string = i18n.__(
-      { phrase: '{{string}}, Genres: {{asset.genres}}', locale: language },
+      { phrase: '{{& string}}, Genres: {{& asset.genres}}', locale: language },
       { asset: { genres: asset.genres.join(', ') }, string }
     );
   }
@@ -83,14 +83,14 @@ module.exports = (data, parts, language = 'de') => {
     if (parts.includes('maxpert') && maxpert) {
       string = i18n.__(
         {
-          phrase: 'Tip of the Day from {{maxpert.firstname}} {{maxpert.surname}}: {{string}}',
+          phrase: 'Tip of the Day from {{& maxpert.firstname}} {{& maxpert.surname}}: {{& string}}',
           locale: language,
         },
         { maxpert, string }
       );
     } else {
       string = i18n.__(
-        { phrase: 'Tip of the Day: {{string}}', locale: language },
+        { phrase: 'Tip of the Day: {{& string}}', locale: language },
         { string }
       );
     }
@@ -98,7 +98,7 @@ module.exports = (data, parts, language = 'de') => {
 
   if (parts.includes('review') && review) {
     string = i18n.__(
-      { phrase: '{{string}}, {{review.headline}}', locale: language },
+      { phrase: '{{& string}}, {{& review.headline}}', locale: language },
       { review, string }
     );
   }
@@ -106,7 +106,7 @@ module.exports = (data, parts, language = 'de') => {
   if (parts.includes('description')) {
     if (string.length > 0) {
       string = i18n.__(
-        { phrase: '{{string}}. {{asset.description}}', locale: language },
+        { phrase: '{{& string}}. {{& asset.description}}', locale: language },
         { asset, string }
       );
     } else {
