@@ -23,6 +23,31 @@ describe('renderer.js', () => {
     assert.equal(actual, expected);
   });
 
+  it('should get the typed title correct if there are special characters', () => {
+    const actual = renderer(
+      { asset: { title: "Devil's Candy", type: 'movie' } },
+      ['typedTitle']
+    );
+    const expected = "Der Film Devil's Candy";
+    assert.equal(actual, expected);
+  });
+
+  it('should get the title correct for episodes', () => {
+    const actual = renderer(
+      {
+        asset: {
+          title: 'Criminal Minds: Beyond Borders',
+          type: 'episode',
+          episodeTitle: 'A good episode title',
+        },
+      },
+      ['typedTitle']
+    );
+    const expected =
+      'Die Serie Criminal Minds: Beyond Borders - Folge A good episode title';
+    assert.equal(actual, expected);
+  });
+
   it('should get the description', () => {
     const actual = renderer({ asset }, ['description']);
     const expected = 'A good description';

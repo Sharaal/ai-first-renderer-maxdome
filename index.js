@@ -33,7 +33,7 @@ module.exports = (data, parts, language = 'de') => {
         if (asset.episodeTitle) {
           string = i18n.__(
             {
-              phrase: '{{& string}} - Episode {{& episodeTitle}}',
+              phrase: '{{& string}} - Episode {{& asset.episodeTitle}}',
               locale: language,
             },
             { asset, string }
